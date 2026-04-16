@@ -25,6 +25,9 @@ jobs:
         os: [ubuntu-latest]
         scala: [2.12.21, 3.8.3]
         java: [zulu@8, temurin@11, temurin@17, temurin@21]
+        exclude:
+          - scala: 3.8.3
+            java: zulu@8
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout current branch (full)

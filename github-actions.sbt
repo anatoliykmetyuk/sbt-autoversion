@@ -2,6 +2,7 @@ inThisBuild(
   Seq(
     githubWorkflowJavaVersions ++= Seq(JavaSpec.temurin("11"), JavaSpec.temurin("17"), JavaSpec.temurin("21")),
     githubWorkflowBuild := Seq(WorkflowStep.Sbt(List("test", "scripted"))),
+    githubWorkflowBuildMatrixExclusions += MatrixExclude(Map("scala" -> "3.8.3", "java" -> "zulu@8")),
     githubWorkflowTargetTags ++= Seq("v*"),
     githubWorkflowPublishTargetBranches += RefPredicate.StartsWith(Ref.Tag("v")),
     githubWorkflowPublish := Seq(
