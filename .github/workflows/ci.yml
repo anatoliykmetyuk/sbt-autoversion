@@ -28,6 +28,8 @@ jobs:
         exclude:
           - scala: 3.8.3
             java: zulu@8
+          - scala: 3.8.3
+            java: temurin@11
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout current branch (full)
